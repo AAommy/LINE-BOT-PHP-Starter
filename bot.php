@@ -24,12 +24,9 @@ if (!is_null($events['events'])) {
 			}
 			
 			$messages = [
-				"type": "location",
-				"title": "my location",
-				"address": "〒150-0002 東京都渋谷区渋谷２丁目２１−１",
-				"latitude": 35.65910807942215,
-				"longitude": 139.70372892916203
-				//'text' => $Textreply
+				'type': 'image',
+				'originalContentUrl': 'https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png',
+				'previewImageUrl': 'https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
