@@ -18,9 +18,9 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			if(strpos($text, 'h') !== false){
-				$Textreply = 'he';
+				$Textreply = 'hello';
 			}else{
-				$Textreply = '5';
+				$Textreply = '555';
 			}
 			$messages = [
 				'type' => 'text',
