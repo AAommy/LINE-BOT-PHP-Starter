@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if($text == '%h%'){
+			if(strpos($text, 'h') != false){
 				$Textreply = 'hello';
 			}else{
 				$Textreply = '555';
