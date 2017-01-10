@@ -17,10 +17,10 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if(strpos($text, 'h') != false){
-				$Textreply = 'hello';
+			if(strpos($text, 'h') !== false){
+				$Textreply = 'he';
 			}else{
-				$Textreply = '555';
+				$Textreply = '5';
 			}
 			$messages = [
 				'type' => 'text',
