@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			if($text == 'hi'){
 				$messages = [
 					'type' => 'text',
-					'text' => 'helloooooooooooo'
+					'text' => 'hello'
 				];
 			}else{
 				$messages = [
