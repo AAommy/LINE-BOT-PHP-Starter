@@ -20,13 +20,12 @@ if (!is_null($events['events'])) {
 			if($text == 'hi'){
 				$messages = [
 					'type' => 'text',
-					'text' => 'helloooooooo'
+					'text' => 'hello'
 				];
 			}else{
 				$messages = [
 					'type' => 'image',
-					'originalContentUrl' => 'http://3.bp.blogspot.com/-u-LWkEgO7eo/T5YC7JCegaI/AAAAAAAAHDw/gDBgpyY5mXA/s1600/black+mickey+head.jpg',
-					'previewImageUrl' => 'http://3.bp.blogspot.com/-u-LWkEgO7eo/T5YC7JCegaI/AAAAAAAAHDw/gDBgpyY5mXA/s1600/black+mickey+head.jpg'
+					'image' => 'http://3.bp.blogspot.com/-u-LWkEgO7eo/T5YC7JCegaI/AAAAAAAAHDw/gDBgpyY5mXA/s1600/black+mickey+head.jpg'
 				];
 			}
 			
