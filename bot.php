@@ -25,8 +25,8 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type': 'image',
-				'originalContentUrl': 'https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png',
-				'previewImageUrl': 'https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png'
+				'originalContentUrl': 'http://3.bp.blogspot.com/-u-LWkEgO7eo/T5YC7JCegaI/AAAAAAAAHDw/gDBgpyY5mXA/s1600/black+mickey+head.jpg',
+				'previewImageUrl': 'http://3.bp.blogspot.com/-u-LWkEgO7eo/T5YC7JCegaI/AAAAAAAAHDw/gDBgpyY5mXA/s1600/black+mickey+head.jpg'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
