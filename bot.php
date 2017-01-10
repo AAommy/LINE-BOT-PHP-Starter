@@ -29,8 +29,8 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl' => 'https://www.xn--42ch8abz5a8aao6cgb3a9g1bw5jrf.com/wp-content/uploads/2016/05/%E0%B8%95%E0%B8%B0%E0%B8%81%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2-150x150.jpg',
-				'previewImageUrl' => 'https://www.xn--42ch8abz5a8aao6cgb3a9g1bw5jrf.com/wp-content/uploads/2016/05/%E0%B8%95%E0%B8%B0%E0%B8%81%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2-150x150.jpg'
+				'originalContentUrl' => 'https://example.com/original.jpg',
+				'previewImageUrl' => 'https://example.com/preview.jpg'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
