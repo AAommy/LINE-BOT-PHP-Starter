@@ -23,9 +23,8 @@ if (!is_null($events['events'])) {
 				$Textreply = '555';
 			}
 			$messages = [
-				'type' => 'sticker',
-				'packageId' => '1',
-				'stickerId' => $text
+				'type' => 'text',
+				'text' => $Textreply
 			];
 			
 			/*$messages = [
