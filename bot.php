@@ -26,7 +26,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 					'type' => 'image',
 					'originalContentUrl' => 'https://example.com/original.jpg',
-					'previewImageUrl' => 'https://example.com/preview.jpg'
+					'previewImageUrl' => 'http://pngimg.com/upload/phone_PNG463.png'
 				];
 			}
 
