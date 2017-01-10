@@ -19,8 +19,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if($text == 'hi'){
 				$messages = [
-					'type': 'text',
-					'text': 'hello'
+					'type' => 'text',
+					'text' => 'hello'
 				];
 			}else{
 				$messages = [
