@@ -20,15 +20,15 @@ if (!is_null($events['events'])) {
 			if($text == 'hi'){
 				$messages = [
 					'type' => 'text',
-					'text' => 'hello'
+					'text' => 'helloooooooooooo'
 				];
 			}else{
 				$messages = [
 					'type' => 'image',
-					'image' => 'http://3.bp.blogspot.com/-u-LWkEgO7eo/T5YC7JCegaI/AAAAAAAAHDw/gDBgpyY5mXA/s1600/black+mickey+head.jpg'
+					'originalContentUrl' => 'https://example.com/original.jpg',
+					'previewImageUrl' => 'https://example.com/preview.jpg'
 				];
 			}
-			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
