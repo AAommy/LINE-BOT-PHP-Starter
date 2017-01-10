@@ -20,12 +20,12 @@ if (!is_null($events['events'])) {
 			if($text == 'hi'){
 				$messages = [
 					'type' => 'text',
-					'text' => 'hello'
+					'text' => 'helloooooo'
 				];
 			}else{
 				$messages = [
 					'type' => 'image',
-					'originalContentUrl' => 'https://example.com/original.jpg',
+					'originalContentUrl' => 'http://pngimg.com/upload/phone_PNG463.png',
 					'previewImageUrl' => 'http://pngimg.com/upload/phone_PNG463.png'
 				];
 			}
