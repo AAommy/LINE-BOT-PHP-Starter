@@ -18,17 +18,20 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			if($text == 'hi'){
-				$messages = [
-					'type' => 'text',
-					'text' => 'helloooooo'
-				];
+				$Textreply = 'hello';
 			}else{
-				$messages = [
-					'type' => 'image',
-					'originalContentUrl' => 'http://pngimg.com/upload/phone_PNG463.png',
-					'previewImageUrl' => 'http://pngimg.com/upload/phone_PNG463.png'
-				];
+				$Textreply = '555';
 			}
+			$messages = [
+				'type' => 'text',
+				'text' => $Textreply
+			];
+			
+			/*$messages = [
+				'type' => 'image',
+				'originalContentUrl' => 'https://example.com/original.jpg',
+				'previewImageUrl' => 'https://example.com/preview.jpg'
+			];*/
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
