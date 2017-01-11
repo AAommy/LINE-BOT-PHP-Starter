@@ -21,8 +21,22 @@ if (!is_null($events['events'])) {
 
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
 			$response = $bot->replyMessage($replyToken, $textMessageBuilder);
+			
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			
+			$post = json_encode($response);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-			echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			echo $result . "\r\n";
 		}
 	}
 }
