@@ -22,6 +22,10 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => 'hello'
 				];
+				$messages = [
+					'type' => 'text',
+					'text' => 'How are you?'
+				];
 			}else if($text == 'ii'){
 				$messages = [
 					'type' => 'image',
