@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if(strpos($text, 'h') == true){
+			if(strpos($text, 'h') !== false){
 				$messages = [
 					'type' => 'text',
 					'text' => 'hello'
@@ -25,13 +25,13 @@ if (!is_null($events['events'])) {
 			}else if($text == '555'){
 				$messages = [
 					'type' => 'text',
-					'text' => '555555555555'
+					'text' => '5 5 5'
 				];
 			}else{
 				$messages = [
 					'type' => 'image',
-					'originalContentUrl' => 'Hydrangeas.jpg',
-					'previewImageUrl' => 'aaa.jpg'
+					'originalContentUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/Hydrangeas.jpg',
+					'previewImageUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg'
 				];
 			}
 			/*$messages = [
