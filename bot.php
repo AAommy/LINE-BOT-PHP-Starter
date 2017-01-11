@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 					'type' => 'image',
 					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
-					'previewImageUrl' => 'http://i825.photobucket.com/albums/zz180/x3shanerx3/Buttons/button-1-1.jpg'
+					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
 			}
 			/*$messages = [
