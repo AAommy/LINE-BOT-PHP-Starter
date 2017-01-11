@@ -89,8 +89,8 @@ if (!is_null($events['events'])) {
 			$stickerId = $event['message']['stickerId'];
 			$messages = [
 				'type' => 'sticker',
-				'packageId' => $packageId,
-				'stickerId' => $stickerId
+				'packageId' => '1',
+				'stickerId' => '1'
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
