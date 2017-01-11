@@ -16,85 +16,13 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			// Build message to reply back
-			if(strpos($text, 'h') !== false){
-				$messages = [
-					'type' => 'text',
-					'text' => 'helloooooo'
-				];
-			}else if($text == 'rr'){
-				$messages = [
-					'type' => 'text',
-					'text' => $replyToken
-				];
-			}else if($text == 'ii'){
-				$messages = [
-					'type' => 'image',
-					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
-					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
-				];
-			}else if($text == 'vv'){
-				$messages = [
-					'type' => 'video',
-					'originalContentUrl' => 'https://www.youtube.com/watch?v=SEmOaljq02I',
-					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
-				];
-			}else if($text == 'aa'){
-				$messages = [
-					'type' => 'audio',
-					'originalContentUrl' => 'https://example.com/original.m4a',
-					'duration' => 240000
-				];
-			}else if($text == 'll'){
-				$messages = [
-					'type' => 'location',
-					'title' => 'my location',
-					'address' => '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
-					'latitude' => 35.65910807942215,
-					'longitude' => 139.70372892916203
-				];
-			}else if($text == 'ss'){
-				$messages = [
-					'type' => 'sticker',
-					'packageId' => '1',
-					'stickerId' => '1'
-				];
-			}else{
-				$messages = [
-					'type' => 'text',
-					'text' => '555'
-				];
-			}
-			/*$messages = [
-				'type' => 'text',
-				'text' => $Textreply
-			];*/
-			
-			/*$messages = [
-				'type' => 'image',
-				'originalContentUrl' => 'Hydrangeas.jpg',
-				'previewImageUrl' => 'aaa.jpg'
-			];*/
+			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '	
+515995d49d4801e7c580b8c914709b35']);
+			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+			$response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo $result . "\r\n";
+			echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 		}
 	}
 }
