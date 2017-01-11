@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			if(strpos($text, 'h') !== false){
 				$messages = [
 					'type' => 'text',
-					'text' => 'hello'
+					'text' => 'hellooo'
 				];
 			}else if($text == 'ii'){
 				$messages = [
@@ -93,10 +93,13 @@ if (!is_null($events['events'])) {
 		}
 		if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 			$replyToken = $event['replyToken'];
+			$packageId = $event['message']['packageId'];
+			$stickerId =  $event['message']['stickerId'];
+			
 			$messages = [
 				'type' => 'sticker',
-				'packageId' => '1',
-				'stickerId' => '1'
+				'packageId' => $packageId,
+				'stickerId' => $stickerId
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
