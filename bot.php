@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 			}else if($text == 'vv'){
 				$messages = [
 					'type' => 'video',
-					'originalContentUrl' => 'https://www.youtube.com/watch?v=SEmOaljq02I',
+					'originalContentUrl' => 'https://example.com/original.mp4',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
 			}else if($text == 'aa'){
