@@ -19,12 +19,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if(strpos($text, 'h') !== false){
 				$messages = [
-				{
 					'type' => 'text',
 					'text' => 'hello'
-				}
-				{	'type' => 'text',
-				'text' => 'How are you?'}
 				];
 			}else if($text == 'ii'){
 				$messages = [
