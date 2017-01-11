@@ -17,60 +17,27 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if(strpos($text, 'h') !== false){
-				$messages = [
-					'type' => 'text',
-					'text' => 'hello'
-				];
-			}else if($text == 'ii'){
-				$messages = [
-					'type' => 'image',
-					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
-					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
-				];
-			}else if($text == 'vv'){
-				$messages = [
-					'type' => 'video',
-					'originalContentUrl' => 'https://example.com/original.mp4',
-					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
-				];
-			}else if($text == 'aa'){
-				$messages = [
-					'type' => 'audio',
-					'originalContentUrl' => 'https://example.com/original.m4a',
-					'duration' => 240000
-				];
-			}else if($text == 'll'){
-				$messages = [
-					'type' => 'location',
-					'title' => 'my location',
-					'address' => '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
-					'latitude' => 35.65910807942215,
-					'longitude' => 139.70372892916203
-				];
-			}else if($text == 'ss'){
-				$messages = [
-					'type' => 'sticker',
-					'packageId' => '1',
-					'stickerId' => '1'
-				];
-			}else{
-				$messages = [
-					'type' => 'text',
-					'text' => '555'
-				];
-			}
-			/*$messages = [
-				'type' => 'text',
-				'text' => $Textreply
-			];*/
+			$messages = [
+				'type' => 'template',
+				'altText' => 'this is a confirm template',
+				'template' => {
+					'type' => 'confirm',
+					'text' => 'Are you sure?',
+					'actions' => [
+						{
+							'type' => 'message',
+							'label' => 'Yes',
+							'text' => 'yes'
+						}/*,
+						{
+							'type' => 'message',
+							'label' => 'No',
+							'text' => 'no'
+						}*/
+					]
+				}
+			];
 			
-			/*$messages = [
-				'type' => 'image',
-				'originalContentUrl' => 'Hydrangeas.jpg',
-				'previewImageUrl' => 'aaa.jpg'
-			];*/
-
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
