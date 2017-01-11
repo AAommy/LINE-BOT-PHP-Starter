@@ -20,17 +20,17 @@ if (!is_null($events['events'])) {
 			if(strpos($text, 'h') !== false){
 				$messages = [
 					'type' => 'text',
-					'text' => 'hello'
+					'text' => 'hellooooo'
 				];
 			}else if($text == '555'){
 				$messages = [
 					'type' => 'text',
-					'text' => '5 5 5'
+					'text' => '55555'
 				];
 			}else{
 				$messages = [
 					'type' => 'image',
-					'originalContentUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/Hydrangeas.jpg',
+					'originalContentUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg',
 					'previewImageUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg'
 				];
 			}
