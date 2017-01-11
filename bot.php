@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl' => 'https://example.com/original.jpg',
+				'originalContentUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/Hydrangeas.jpg',
 				'previewImageUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg'
 			];
 
