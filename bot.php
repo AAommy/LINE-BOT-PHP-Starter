@@ -29,8 +29,8 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl' => 'https://example.com/original.mp4',
-				'previewImageUrl' => 'https://example.com/preview.jpg'
+				'originalContentUrl' => 'https://example.com/original.jpg',
+				'previewImageUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
