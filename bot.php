@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			}else{
 				$messages = [
 					'type' => 'image',
-					'originalContentUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg',
+					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
 					'previewImageUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg'
 				];
 			}
