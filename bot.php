@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl' => 'https://example.com/original.jpg',
+				'originalContentUrl' => 'https://example.com/original.mp4',
 				'previewImageUrl' => 'https://example.com/preview.jpg'
 			];
 
