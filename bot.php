@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
 			}else if($text == 'ss'){
 				$messages = [
 					'type' => 'sticker',
-					'packageId' => '2',
+					'packageId' => '1',
 					'stickerId' => '1'
 				];
 			}else{
