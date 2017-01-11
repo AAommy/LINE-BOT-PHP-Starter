@@ -22,16 +22,22 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => 'hellooooo'
 				];
-			}else if($text == '555'){
-				$messages = [
-					'type' => 'text',
-					'text' => '55555'
-				];
-			}else{
+			}else if($text == 'ii'){
 				$messages = [
 					'type' => 'image',
 					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
+				];
+			}else if($text == 'vv'){
+				$messages = [
+					'type' => 'video',
+					'originalContentUrl' => 'https://www.youtube.com/watch?v=SEmOaljq02I',
+					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
+				];
+			}else{
+				$messages = [
+					'type' => 'text',
+					'text' => '55555'
 				];
 			}
 			/*$messages = [
