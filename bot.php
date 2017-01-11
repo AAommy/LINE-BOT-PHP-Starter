@@ -17,21 +17,33 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if(strpos($text, 'h') !== false){
-				$Textreply = 'hello';
+			if(strpos($text, 'h') == true){
+				$messages = [
+					'type' => 'text',
+					'text' => 'hello'
+				];
+			}else if($text == '555'){
+				$messages = [
+					'type' => 'text',
+					'text' => '555555555555'
+				];
 			}else{
-				$Textreply = '555';
+				$messages = [
+					'type' => 'image',
+					'originalContentUrl' => 'Hydrangeas.jpg',
+					'previewImageUrl' => 'aaa.jpg'
+				];
 			}
 			/*$messages = [
 				'type' => 'text',
 				'text' => $Textreply
 			];*/
 			
-			$messages = [
+			/*$messages = [
 				'type' => 'image',
-				'originalContentUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/Hydrangeas.jpg',
-				'previewImageUrl' => 'https://github.com/AAommy/LINE-BOT-PHP-Starter/blob/master/aaa.jpg'
-			];
+				'originalContentUrl' => 'Hydrangeas.jpg',
+				'previewImageUrl' => 'aaa.jpg'
+			];*/
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
