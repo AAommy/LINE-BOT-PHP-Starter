@@ -34,6 +34,20 @@ if (!is_null($events['events'])) {
 					'originalContentUrl' => 'https://www.youtube.com/watch?v=SEmOaljq02I',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
+			}else if($text == 'aa'){
+				$messages = [
+					'type' => 'audio',
+					'originalContentUrl' => 'https://example.com/original.m4a',
+					'duration' => 240000
+				];
+			}else if($text == 'll'){
+				$messages = [
+					'type': 'location',
+					'title': 'my location',
+					'address': '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
+					'latitude': 35.65910807942215,
+					'longitude': 139.70372892916203
+				];
 			}else{
 				$messages = [
 					'type' => 'text',
