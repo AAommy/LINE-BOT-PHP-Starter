@@ -48,6 +48,12 @@ if (!is_null($events['events'])) {
 					'latitude' => 35.65910807942215,
 					'longitude' => 139.70372892916203
 				];
+			}else if($text == 'ss'){
+				$messages = [
+					'type' => 'sticker',
+					'packageId' => '1',
+					'stickerId' => '1'
+				];
 			}else{
 				$messages = [
 					'type' => 'text',
