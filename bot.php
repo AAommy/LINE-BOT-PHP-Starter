@@ -25,13 +25,13 @@ if (!is_null($events['events'])) {
 			}else if($text == 'ii'){
 				$messages = [
 					'type' => 'image',
-					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
+					'originalContentUrl' => 'http://techslides.com/demos/samples/sample.jpg',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
 			}else if($text == 'vv'){
 				$messages = [
 					'type' => 'video',
-					'originalContentUrl' => 'http://techslides.com/demos/sample-videos/small.mp4',
+					'originalContentUrl' => 'https://www.youtube.com/watch?v=SEmOaljq02I',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
 			}else if($text == 'aa'){
