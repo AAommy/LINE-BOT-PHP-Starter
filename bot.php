@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			if(strpos($text, 'h') !== false){
 				$messages = [
 					'type' => 'text',
-					'text' => 'hellooo'
+					'text' => 'hello'
 				];
 			}else if($text == 'ii'){
 				$messages = [
