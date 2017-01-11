@@ -94,4 +94,3 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
-print_r($messages+'test');
