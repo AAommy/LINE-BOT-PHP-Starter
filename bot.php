@@ -54,27 +54,6 @@ if (!is_null($events['events'])) {
 					'packageId' => '1',
 					'stickerId' => '1'
 				];
-			}else if($text == 'bb'){
-				$messages = [
-					'type' => 'template',
-					'altText' => 'this is a confirm template',
-					'template' => {
-						'type' => 'confirm',
-						'text' => 'Are you sure?',
-						'actions' => [
-							{
-								'type' => 'message',
-								'label' => 'Yes',
-								'text' => 'yes'
-							},
-							{
-								'type' => 'message',
-								'label' => 'No',
-								'text' => 'no'
-							}
-						]
-					}
-				];
 			}else{
 				$messages = [
 					'type' => 'text',
