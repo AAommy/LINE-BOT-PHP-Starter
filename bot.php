@@ -19,15 +19,15 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'template',
 				'altText' => 'this is a buttons template',
-				'template' => [
+				'template' => {
 					'type' => 'buttons',
 					'text' => 'Please select',
-					'actions' => [
+					'actions' => {
 						'type' => 'postback',
 						'label' => 'Buy',
 						'data' => 'action=buy&itemid=123'
-					]
-				]
+					}
+				}
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
