@@ -1,6 +1,5 @@
 <?php
 $access_token = 'wzwpbz9tZWCSPDrTFYf+APzByZ3jnlV259OV13WiCcsBXMftEVvi/OzVdEy8C31CYj4iA6GdPwQ5QCBnrJPKTNC4IcxZlr4bJwIVRAPd1FlWnDG8ThGjHWY4ZIOD1V/DhshZVuUJUv+YfDrLgh6xtgdB04t89/1O/w1cDnyilFU=';
-$channelSecret = '515995d49d4801e7c580b8c914709b35';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -26,21 +25,9 @@ if (!is_null($events['events'])) {
 					'title' => 'Menu',
 					'text' => 'Please select',
 					'actions' => [
-						{
 							'type' => 'postback',
 							'label' => 'Buy',
 							'data' => 'action=buy&itemid=123'
-						},
-						{
-							'type' => 'postback',
-							'label' => 'Add to cart',
-							'data' => 'action=add&itemid=123'
-						},
-						{
-							'type' => 'uri',
-							'label' => 'View detail',
-							'uri' => 'http://example.com/page/123'
-						}
 					]
 				}
 			];
