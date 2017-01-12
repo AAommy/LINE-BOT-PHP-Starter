@@ -47,15 +47,12 @@ if (!is_null($events['events'])) {
 			$messages['altText'] = 'this is a buttons template';
 			$messages['template']['type'] = 'buttons';
 			$messages['template']['text'] = 'Please select';
-			$messages['template']['action'][0]['type'] = 'postback';
-			$messages['template']['action'][0]['label'] = 'Buy';
-			$messages['template']['action'][0]['data'] = 'action=buy&itemid=123';
-			$messages['template']['action'][1]['type'] = 'postback';
-			$messages['template']['action'][1]['label'] = 'Add to cart';
-			$messages['template']['action'][1]['data'] = 'action=add&itemid=123';
-			$messages['template']['action'][2]['type'] = 'uri';
-			$messages['template']['action'][2]['label'] = 'View detail';
-			$messages['template']['action'][2]['data'] = 'http://example.com/page/123';
+			$messages['template']['action'][0]['type'] = 'message';
+			$messages['template']['action'][0]['label'] = 'Yes';
+			$messages['template']['action'][0]['text'] = 'yes';
+			$messages['template']['action'][1]['type'] = 'message';
+			$messages['template']['action'][1]['label'] = 'No';
+			$messages['template']['action'][1]['text'] = 'no';
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
