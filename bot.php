@@ -16,10 +16,16 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => $text
-			];
+			$messages['type'] = 'template';
+			$messages['altText'] = 'this is a buttons template';
+			$messages['template']['type'] = 'buttons';
+			$messages['template']['text'] = 'Please select';
+			$messages['template']['action'][0]['type'] = 'message';
+			$messages['template']['action'][0]['label'] = 'Yes';
+			$messages['template']['action'][0]['text'] = 'yes';
+			$messages['template']['action'][1]['type'] = 'message';
+			$messages['template']['action'][1]['label'] = 'No';
+			$messages['template']['action'][1]['text'] = 'no';
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -43,16 +49,10 @@ if (!is_null($events['events'])) {
 		}else{
 			$replyToken = $event['replyToken'];
 			
-			$messages['type'] = 'template';
-			$messages['altText'] = 'this is a buttons template';
-			$messages['template']['type'] = 'buttons';
-			$messages['template']['text'] = 'Please select';
-			$messages['template']['action'][0]['type'] = 'message';
-			$messages['template']['action'][0]['label'] = 'Yes';
-			$messages['template']['action'][0]['text'] = 'yes';
-			$messages['template']['action'][1]['type'] = 'message';
-			$messages['template']['action'][1]['label'] = 'No';
-			$messages['template']['action'][1]['text'] = 'no';
+			$messages = [
+				'type' => 'text',
+				'text' => 'Hello'
+			];
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -60,6 +60,7 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
+			
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
