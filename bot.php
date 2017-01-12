@@ -23,12 +23,7 @@ if (!is_null($events['events'])) {
 					'type' => 'buttons',
 					'thumbnailImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg',
 					'title' => 'Menu',
-					'text' => 'Please select',
-					'actions' => [
-						'type' => 'postback',
-						'label' => 'Buy',
-						'data' => 'action=buy&itemid=123'
-					]
+					'text' => 'Please select'
 				]
 			];
 			
