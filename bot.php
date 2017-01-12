@@ -41,6 +41,8 @@ if (!is_null($events['events'])) {
 
 			echo $result . '\r\n';
 		}else{
+			$replyToken = $event['replyToken'];
+			
 			$messages['type'] = 'template';
 			$messages['altText'] = 'this is a buttons template';
 			$messages['template']['type'] = 'buttons';
