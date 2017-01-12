@@ -56,4 +56,4 @@ if (!is_null($events['events'])) {
 	}
 }
 echo 'OK';
-print_r($events+ '0');
+print_r($events);
