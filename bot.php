@@ -18,8 +18,31 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'text',
-				'text' => 'hi'
+				'type' => 'template',
+				'altText' => 'this is a buttons template',
+				'template' => {
+					'type' => 'buttons',
+					'thumbnailImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg',
+					'title' => 'Menu',
+					'text' => 'Please select',
+					'actions' => [
+						{
+							'type' => 'postback',
+							'label' => 'Buy',
+							'data' => 'action=buy&itemid=123'
+						},
+						{
+							'type' => 'postback',
+							'label' => 'Add to cart',
+							'data' => 'action=add&itemid=123'
+						},
+						{
+							'type' => 'uri',
+							'label' => 'View detail',
+							'uri' => 'http://example.com/page/123'
+						}
+					]
+				}
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
