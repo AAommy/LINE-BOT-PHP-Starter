@@ -19,12 +19,12 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'template',
 				'altText' => 'this is a buttons template',
-				'template' => {
+				'template' => [
 					'type' => 'buttons',
 					'thumbnailImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg',
 					'title' => 'Menu',
 					'text' => 'Please select'
-				} 
+				];
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
