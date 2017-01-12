@@ -19,8 +19,6 @@ if (!is_null($events['events'])) {
 			$messages['type'] = 'template';
 			$messages['altText'] = 'this is a buttons template';
 			$messages['template']['type'] = 'buttons';
-			$messages['template']['thumbnailImageUrl'] = 'https://example.com/bot/images/image.jpg';
-			$messages['template']['title'] = 'Menu';
 			$messages['template']['text'] = 'Please select';
 			$messages['template']['action'][0]['type'] = 'postback';
 			$messages['template']['action'][0]['label'] = 'Buy';
