@@ -17,29 +17,27 @@ if (!is_null($events['events'])) {
 			
 			// Build message to reply back
 			if(strpos($text, 'h') !== false){
-				$messages[0]['type'] = 'text';
-				$messages[0]['text'] = 'Hello';
-				$messages[1]['type'] = 'text';
-				$messages[1]['text'] = 'hi!!';
-			}else if($text == 'ii'){
+				$messages['type'] = 'text';
+				$messages['text'] = 'Hello';
+			}else if($text == 'image'){
 				$messages = [
 					'type' => 'image',
 					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
-			}else if($text == 'vv'){
+			}else if($text == 'video'){
 				$messages = [
 					'type' => 'video',
 					'originalContentUrl' => 'https://example.com/original.mp4',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
-			}else if($text == 'aa'){
+			}else if($text == 'audio'){
 				$messages = [
 					'type' => 'audio',
 					'originalContentUrl' => 'https://example.com/original.m4a',
 					'duration' => 240000
 				];
-			}else if($text == 'll'){
+			}else if($text == 'location'){
 				$messages = [
 					'type' => 'location',
 					'title' => 'my location',
@@ -47,7 +45,7 @@ if (!is_null($events['events'])) {
 					'latitude' => 35.65910807942215,
 					'longitude' => 139.70372892916203
 				];
-			}else if($text == 'ss'){
+			}else if($text == 'sticker'){
 				$messages = [
 					'type' => 'sticker',
 					'packageId' => '1',
@@ -71,13 +69,7 @@ if (!is_null($events['events'])) {
 			$n = array_filter($messages,'is_array');
 			$c = count($n);
 			
-			if($c >= 2){
-				$data = [
-					'replyToken' => $replyToken,
-					'messages' => [$messages[1]],
-				];
-			}
-			else{
+			
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
@@ -95,7 +87,6 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . '\r\n';
-		}
 		if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 			$replyToken = $event['replyToken'];
 			$packageId = $event['message']['packageId'];
@@ -123,8 +114,6 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-
-			echo $result . '\r\n';
 		}
 	}
 }
