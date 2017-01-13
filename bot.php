@@ -54,14 +54,8 @@ if (!is_null($events['events'])) {
 			}else if($text == 'tt'){
 				$messages['type'] = 'template';
 				$messages['altText'] = 'this is a buttons template';
-				/*$messages['template']['type'] = 'buttons';
+				$messages['template']['type'] = 'buttons';
 				$messages['template']['text'] = 'Please select';
-				$messages['template']['action'][0]['type'] = 'message';
-				$messages['template']['action'][0]['label'] = 'Yes';
-				$messages['template']['action'][0]['text'] = 'yes';
-				$messages['template']['action'][1]['type'] = 'message';
-				$messages['template']['action'][1]['label'] = 'No';
-				$messages['template']['action'][1]['text'] = 'no';*/
 			}else{
 				$messages = [
 					'type' => 'text',
