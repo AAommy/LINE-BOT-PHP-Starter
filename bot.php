@@ -1,6 +1,6 @@
 <?php
 require linecorp/line-bot-sdk
-
+/*
 $access_token = 'wzwpbz9tZWCSPDrTFYf+APzByZ3jnlV259OV13WiCcsBXMftEVvi/OzVdEy8C31CYj4iA6GdPwQ5QCBnrJPKTNC4IcxZlr4bJwIVRAPd1FlWnDG8ThGjHWY4ZIOD1V/DhshZVuUJUv+YfDrLgh6xtgdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -119,4 +119,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo 'OK';
+echo 'OK';*/
