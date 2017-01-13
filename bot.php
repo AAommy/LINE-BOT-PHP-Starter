@@ -14,18 +14,62 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			
 			// Build message to reply back
-			$messages['type'] = 'template';
-			$messages['altText'] = 'this is a buttons template';
-			$messages['template']['type'] = 'buttons';
-			$messages['template']['text'] = 'Please select';
-			$messages['template']['action'][0]['type'] = 'message';
-			$messages['template']['action'][0]['label'] = 'Yes';
-			$messages['template']['action'][0]['text'] = 'yes';
-			$messages['template']['action'][1]['type'] = 'message';
-			$messages['template']['action'][1]['label'] = 'No';
-			$messages['template']['action'][1]['text'] = 'no';
+			if(strpos($text, 'h') !== false){
+				$messages = [
+					'type' => 'text',
+					'text' => 'hello'
+				];
+			}else if($text == 'ii'){
+				$messages = [
+					'type' => 'image',
+					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
+					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
+				];
+			}else if($text == 'vv'){
+				$messages = [
+					'type' => 'video',
+					'originalContentUrl' => 'https://example.com/original.mp4',
+					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
+				];
+			}else if($text == 'aa'){
+				$messages = [
+					'type' => 'audio',
+					'originalContentUrl' => 'https://example.com/original.m4a',
+					'duration' => 240000
+				];
+			}else if($text == 'll'){
+				$messages = [
+					'type' => 'location',
+					'title' => 'my location',
+					'address' => '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
+					'latitude' => 35.65910807942215,
+					'longitude' => 139.70372892916203
+				];
+			}else if($text == 'ss'){
+				$messages = [
+					'type' => 'sticker',
+					'packageId' => '1',
+					'stickerId' => '1'
+				];
+			}else if($text == 'tt'){
+				$messages['type'] = 'template';
+				$messages['altText'] = 'this is a buttons template';
+				$messages['template']['type'] = 'buttons';
+				$messages['template']['text'] = 'Please select';
+				$messages['template']['action'][0]['type'] = 'message';
+				$messages['template']['action'][0]['label'] = 'Yes';
+				$messages['template']['action'][0]['text'] = 'yes';
+				$messages['template']['action'][1]['type'] = 'message';
+				$messages['template']['action'][1]['label'] = 'No';
+				$messages['template']['action'][1]['text'] = 'no';
+			}else{
+				$messages = [
+					'type' => 'text',
+					'text' => '555'
+				];
+			}
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -46,21 +90,23 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . '\r\n';
-		}else{
+		}
+		if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 			$replyToken = $event['replyToken'];
+			$packageId = $event['message']['packageId'];
+			$stickerId =  $event['message']['stickerId'];
 			
 			$messages = [
-				'type' => 'text',
-				'text' => 'Hello'
+				'type' => 'sticker',
+				'packageId' => $packageId,
+				'stickerId' => $stickerId
 			];
 			
-			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
