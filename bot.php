@@ -17,10 +17,8 @@ if (!is_null($events['events'])) {
 			
 			// Build message to reply back
 			if(strpos($text, 'h') !== false){
-				$messages[0]['type'] = 'text';
-				$messages[0]['text'] = 'Hello';
-				$messages[1]['type'] = 'text';
-				$messages[1]['text'] = 'How are you?';
+				$messages['type'] = 'text';
+				$messages['text'] = 'Hello';
 			}else if($text == 'ii'){
 				$messages = [
 					'type' => 'image',
@@ -56,14 +54,14 @@ if (!is_null($events['events'])) {
 			}else if($text == 'tt'){
 				$messages['type'] = 'template';
 				$messages['altText'] = 'this is a buttons template';
-				$messages['template']['type'] = 'buttons';
+				/*$messages['template']['type'] = 'buttons';
 				$messages['template']['text'] = 'Please select';
 				$messages['template']['action'][0]['type'] = 'message';
 				$messages['template']['action'][0]['label'] = 'Yes';
 				$messages['template']['action'][0]['text'] = 'yes';
 				$messages['template']['action'][1]['type'] = 'message';
 				$messages['template']['action'][1]['label'] = 'No';
-				$messages['template']['action'][1]['text'] = 'no';
+				$messages['template']['action'][1]['text'] = 'no';*/
 			}else{
 				$messages = [
 					'type' => 'text',
