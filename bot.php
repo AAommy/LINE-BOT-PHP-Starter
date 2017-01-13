@@ -17,10 +17,10 @@ if (!is_null($events['events'])) {
 			
 			// Build message to reply back
 			if(strpos($text, 'h') !== false){
-				$messages = [
-					'type' => 'text',
-					'text' => 'hello'
-				];
+				$messages[0]['type'] = 'text';
+				$messages[0]['text'] = 'Hello';
+				$messages[1]['type'] = 'text';
+				$messages[1]['text'] = 'How are you?';
 			}else if($text == 'ii'){
 				$messages = [
 					'type' => 'image',
