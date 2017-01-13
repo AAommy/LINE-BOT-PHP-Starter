@@ -56,11 +56,6 @@ if (!is_null($events['events'])) {
 				$messages['altText'] = 'this is a buttons template';
 				$messages['template']['type'] = 'buttons';
 				$messages['template']['text'] = 'Please select';
-			}else{
-				$messages = [
-					'type' => 'text',
-					'text' => '555'
-				];
 			}
 			
 			// Make a POST Request to Messaging API to reply to sender
