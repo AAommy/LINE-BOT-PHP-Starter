@@ -17,8 +17,10 @@ if (!is_null($events['events'])) {
 			
 			// Build message to reply back
 			if(strpos($text, 'h') !== false){
-				$messages['type'] = 'text';
-				$messages['text'] = 'Hello';
+				$messages[0]['type'] = 'text';
+				$messages[0]['text'] = 'Hello';
+				$messages[1]['type'] = 'text';
+				$messages[1]['text'] = 'hi!!';
 			}else if($text == 'ii'){
 				$messages = [
 					'type' => 'image',
@@ -65,11 +67,21 @@ if (!is_null($events['events'])) {
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-
+			
+			$n = array_filter($messages,'is_array');
+			$c = count($n);
+			
+			if($c >= 2){
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages[1]],
+				];
+			}
+			else{
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
-			];
+			];}
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
