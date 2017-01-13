@@ -16,9 +16,9 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			// Build message to reply back
-			if(strpos($text, 'h') !== false){
+			if(strpos($text, 'ก') !== false){
 				$messages['type'] = 'text';
-				$messages['text'] = 'Hello';
+				$messages['text'] = 'สสวัสดี';
 			}else if($text == 'ii'){
 				$messages = [
 					'type' => 'image',
