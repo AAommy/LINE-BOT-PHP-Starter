@@ -16,11 +16,7 @@ $ composer require linecorp/line-bot-sdk;
     {
 		"name": "moznion",
 		"email": "moznion@gmail.com"
-    },
-	{
-		"name": "sureerat",
-		"email": "sureerat.aom1504@gmail.com"
-	}
+    }
 	],
 	"require": {
 		"php": ">=5.4",
