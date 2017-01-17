@@ -1,4 +1,3 @@
-$ composer require linecorp/line-bot-sdk;
 {
     "require": {
         "AAommy/LINE-BOT-PHP-Starter": "1.0.*"
