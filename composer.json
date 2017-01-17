@@ -7,12 +7,16 @@
     "sdk"
   ],
   "type": "library",
-  "homepage": "https://github.com/AAommy/LINE-BOT-PHP-Starter",
+  "homepage": "https://github.com/line/line-bot-sdk-php",
   "license": "Apache License Version 2.0",
   "authors": [
     {
-      "name": "AAommy",
-      "email": "sureerat.aom1504@gmail.com"
+      "name": "moznion",
+      "email": "moznion@gmail.com"
+    },
+    {
+      "name": "Satoru Yoshihara",
+      "email": "vaduz0@gmail.com"
     }
   ],
   "require": {
