@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
-			];}
+			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
@@ -83,6 +83,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . '\r\n';
+		}
 		if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 			$replyToken = $event['replyToken'];
 			$packageId = $event['message']['packageId'];
