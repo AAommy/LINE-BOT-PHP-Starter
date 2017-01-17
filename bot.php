@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 				$messages[0]['type'] = 'text';
 				$messages[0]['text'] = 'Hello';
 				$messages[1]['type'] = 'text';
-				$messages[1]['text'] = 'Hi';
+				$messages[1]['text'] = 'Hi!!';
 			}else if($text == 'image' || $text == 'imag' || $text == 'img' || $text == 'png' || $text == 'jpg'){
 				$messages = [
 					'type' => 'image',
