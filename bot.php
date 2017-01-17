@@ -19,13 +19,13 @@ if (!is_null($events['events'])) {
 			if(strpos($text, 'h') !== false){
 				$messages['type'] = 'text';
 				$messages['text'] = 'Hello';
-			}else if($text == 'image'){
+			}else if($text == 'image' || $text == 'imag' || $text == 'img' || $text == 'png' || $text == 'jpg'){
 				$messages = [
 					'type' => 'image',
 					'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg',
 					'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/en/6/6d/Pullinger-150x150.jpg'
 				];
-			}else if($text == 'video'){
+			}else if($text == 'video' || $text == 'vid'){
 				$messages = [
 					'type' => 'video',
 					'originalContentUrl' => 'https://example.com/original.mp4',
@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
 					'packageId' => '1',
 					'stickerId' => '1'
 				];
-			}else if($text == 'tt'){
+			}else if($text == 'template'){
 				$messages['type'] = 'template';
 				$messages['altText'] = 'this is a buttons template';
 				$messages['template']['type'] = 'buttons';
