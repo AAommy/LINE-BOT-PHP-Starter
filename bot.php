@@ -19,6 +19,11 @@ if (!is_null($events['events'])) {
 			if(strpos($text, 'h') !== false){
 				$messages['type'] = 'text';
 				$messages['text'] = 'Hello';
+			}else if(strpos($text, 'z') !== false){
+				$messages[0]['type'] = 'text';
+				$messages[0]['text'] = 'Hello';
+				$messages[1]['type'] = 'text';
+				$messages[1]['text'] = 'Hi';
 			}else if($text == 'image' || $text == 'imag' || $text == 'img' || $text == 'png' || $text == 'jpg'){
 				$messages = [
 					'type' => 'image',
