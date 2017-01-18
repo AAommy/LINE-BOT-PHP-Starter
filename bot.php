@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 			$n = array_filter($messages,'is_array');
 			$count = count($n);
 			if($count >= 2){
-				for(i=0;i<$n;i++){
+				for(i=0;i<$count;i++){
 					$data = [
 						'replyToken' => $replyToken,
 						'messages' => [$messages[i]],
