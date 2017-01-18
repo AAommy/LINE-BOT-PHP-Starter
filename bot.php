@@ -70,29 +70,7 @@ if (!is_null($events['events'])) {
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-			$n = array_filter($messages,'is_array');
-			$count = count($n);
-			if($count >= 2){
-				for(i=0;i<$count;i++){
-					$data = [
-						'replyToken' => $replyToken,
-						'messages' => [$messages[i]],
-					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . '\r\n';
-				}
-			}else{
+			
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
@@ -109,7 +87,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 
-			echo $result . '\r\n';}
+			echo $result . '\r\n';
 		}
 		if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 			$replyToken = $event['replyToken'];
