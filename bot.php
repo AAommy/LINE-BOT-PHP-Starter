@@ -71,8 +71,8 @@ if (!is_null($events['events'])) {
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$n = array_filter($messages,'is_array');
-			
-			if($n >= 2){
+			$count = count($n);
+			if($count >= 2){
 				for(i=0;i<$n;i++){
 					$data = [
 						'replyToken' => $replyToken,
