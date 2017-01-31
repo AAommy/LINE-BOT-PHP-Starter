@@ -1,5 +1,5 @@
 <?php
-$access_token = 'wzwpbz9tZWCSPDrTFYf+APzByZ3jnlV259OV13WiCcsBXMftEVvi/OzVdEy8C31CYj4iA6GdPwQ5QCBnrJPKTNC4IcxZlr4bJwIVRAPd1FlWnDG8ThGjHWY4ZIOD1V/DhshZVuUJUv+YfDrLgh6xtgdB04t89/1O/w1cDnyilFU=';
+$access_token = '7d/5ZTMP4E4lxZDhsIeUFlZrD1I38QFKdZC8V6uBg5Sb4pQ1zbc5KaKbrjnz3XjlKqr2uNyWIObJD92hU0yaLO6AslpPjDyjN258d4oRcwyHP9WsAoEULfZEYr5qhewphqLCr37ewhMUtuIhs1F+twdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -56,11 +56,6 @@ if (!is_null($events['events'])) {
 					'packageId' => '1',
 					'stickerId' => '1'
 				];
-			}else if($text == 'template'){
-				$messages['type'] = 'template';
-				$messages['altText'] = 'this is a buttons template';
-				$messages['template']['type'] = 'buttons';
-				$messages['template']['text'] = 'Please select';
 			}else{
 				$messages = [
 					'type' => 'text',
